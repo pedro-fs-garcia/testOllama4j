@@ -14,11 +14,8 @@ ollama pull moondream
 Check if Ollama is running:
 ```
 systemctl status ollama.service
-```
-
-to start ollama:
-```
-ollama serve
+systemctl start ollama.service
+systemctl stop ollama.service
 ```
 
 
