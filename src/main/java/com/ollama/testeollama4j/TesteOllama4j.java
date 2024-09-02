@@ -19,20 +19,20 @@ import io.github.amithkoujalgi.ollama4j.core.utils.OptionsBuilder;
 public class TesteOllama4j {
 
     public static void main(String[] args) throws Exception {
-        String model1 = "llama2";
+        String model1 = "gemma2:2b";
         String prompt1 = "why is the Mona Lisa in Paris?";
         String response1 = generateWithPrompt(model1, prompt1);
 
         String model2 = "moondream";
         String prompt2 = "extract the text from this image";
-        String filePath = "/Users/Home/Pictures/ai/003.jpg";
-        String response2 = generateWithImage(model2, prompt2, filePath);
+        String filePath = "/home/pedro/Imagens/Capturas de tela/db01.png";
+        // String response2 = generateWithImage(model2, prompt2, filePath);
 
         System.out.println(prompt1);
         System.out.println(response1);
         System.out.println("===============");
         System.out.println(prompt2);
-        System.out.println(response2);
+        // System.out.println(response2);
     }
 
     public static String generateWithPrompt(String modelName, String prompt) throws Exception {
@@ -57,7 +57,7 @@ public class TesteOllama4j {
     public static String generateWithImage(String modelName, String prompt, String filePath) throws Exception{
         String host = "http://localhost:11434/";
         OllamaAPI ollamaAPI = new OllamaAPI(host);
-        ollamaAPI.setRequestTimeoutSeconds(60);
+        ollamaAPI.setRequestTimeoutSeconds(120);
 
         OptionsBuilder options = new OptionsBuilder();
         options.setTemperature(0.8f);
