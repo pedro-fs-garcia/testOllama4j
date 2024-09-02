@@ -25,6 +25,12 @@ sudo apt update
 sudo apt maven
 ```
 
+## Installing Tesseract
+```
+sudo apt install tesseract-ocr
+sudo apt install tesseract-oct-por
+```
+
 ## clone the repository
 
 ```
