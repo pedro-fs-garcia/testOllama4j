@@ -19,20 +19,28 @@ import io.github.amithkoujalgi.ollama4j.core.utils.OptionsBuilder;
 public class TesteOllama4j {
 
     public static void main(String[] args) throws Exception {
+        // testPrompt();
+        // testImage();
+
+
+    }
+
+    public static void testPrompt() throws Exception{
         String model1 = "gemma2:2b";
         String prompt1 = "why is the Mona Lisa in Paris?";
-        // String response1 = generateWithPrompt(model1, prompt1);
+        String response1 = generateWithPrompt(model1, prompt1);
+        System.out.println(prompt1);
+        System.out.println(response1);
+    }
 
+    public static void testImage() throws Exception{
         String model2 = "moondream";
         String prompt2 = "extract the text from this image";
         String filePath = "/home/pedro/Imagens/Capturas de tela/db01.png";
         String response2 = generateWithImage(model2, prompt2, filePath);
-
-        System.out.println(prompt1);
-        // System.out.println(response1);
-        System.out.println("===============");
         System.out.println(prompt2);
         System.out.println(response2);
+
     }
 
     public static String generateWithPrompt(String modelName, String prompt) throws Exception {
