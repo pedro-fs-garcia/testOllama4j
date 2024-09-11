@@ -46,14 +46,15 @@ alterar o método main para testar os modelos, prompts e imagens diferentes
 ![main](/main.png)
 
 ### Modelos para serem testados:
-- Visão:
+#### Visão:
  - llava
  - moondream
+ - moondream:v2
  - llava-llama3
  - llava-phi3
  - minicpm-v
 
-- Linguagem:
+#### Linguagem:
  - llama2
  - llama3.1
  - gemma2
@@ -61,6 +62,7 @@ alterar o método main para testar os modelos, prompts e imagens diferentes
  - phi3:mini
  - mistral
 
+### funcionamento
 - quando rodar, o projeto irá gerar um arquivo json no diretorio testOllama4j
 - acesse o arquivo, leia a resposta e avalie a precisao do resultado gerado
 - registre a precisao no local adequado
