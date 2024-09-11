@@ -3,15 +3,12 @@ package com.ollama.testeollama4j;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.sql.SQLException;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
 
 import com.google.gson.Gson;
 
 import io.github.amithkoujalgi.ollama4j.core.OllamaAPI;
-import io.github.amithkoujalgi.ollama4j.core.models.Model;
 import io.github.amithkoujalgi.ollama4j.core.models.OllamaResult;
 import io.github.amithkoujalgi.ollama4j.core.utils.OptionsBuilder;
 
@@ -22,13 +19,19 @@ import io.github.amithkoujalgi.ollama4j.core.utils.OptionsBuilder;
 public class TesteModelos {
 
     public static void main(String[] args) throws Exception {
-        String model = "gemma2:2b";
-        String prompt = "describe the image in ten words";
-        String imagePath = "C:\\Users\\Home\\Pictures\\ai\\001.jpg";
+        // testar os modelos: moondream, moondream:v2, llava
+        String imageModel = "moondream:v2";
+        String imagePrompt = "describe the image in ten words";
+        String filePath = "/home/pedro/Imagens/Capturas de tela/db01.png";
         float temperatura = 08f;
+        testFromImage(imageModel, imagePrompt, filePath, temperatura);
 
-        testFromImage(model, prompt, imagePath, temperatura);
-
+        //testar os modelos: llama2, llama3.1, gemma2, gemma2:2b 
+        String textModel = "gemma2:2b";
+        String textPrompt = "describe the image in ten words";
+        String imagePath = "/home/pedro/Imagens/Capturas de tela/db01.png";
+        float temperatura2 = 08f;
+        // testFromPrompt(textModel, textPrompt, imagePath, temperatura2);
     }
 
     
@@ -56,6 +59,7 @@ public class TesteModelos {
         results.put("imagem", filePath);
         results.put("resposta", response);
         results.put("tempo", responseTime);
+        results.put("precisao", 0);
 
         return results;
     }
@@ -65,7 +69,7 @@ public class TesteModelos {
         
         Gson gson = new Gson();
         String json = gson.toJson(resposta);
-        try (FileWriter file = new FileWriter("resposta.json")) {
+        try (FileWriter file = new FileWriter("respostaImagem.json")) {
             file.write(json);
             System.out.println("Arquivo JSON salvo com sucesso.");
         } catch (IOException e) {
@@ -94,6 +98,7 @@ public class TesteModelos {
         results.put("imagem", imagePath);
         results.put("resposta", response);
         results.put("tempo", responseTime);
+        results.put("precisao", 0);
 
         return results;
     }
@@ -102,7 +107,7 @@ public class TesteModelos {
         HashMap<String, Object> resposta =  generateFromPrompt (model, prompt, imagePath, temperatura);
         Gson gson = new Gson();
         String json = gson.toJson(resposta);
-        try (FileWriter file = new FileWriter("resposta.json")) {
+        try (FileWriter file = new FileWriter("respostaPrompt.json")) {
             file.write(json);
             System.out.println("Arquivo JSON salvo com sucesso.");
         } catch (IOException e) {

@@ -40,3 +40,17 @@ mvn clean install
 mvn compile
 mvn exec:java
 ```
+
+## TesteModelos.java
+alterar o método main para testar os modelos, prompts e imagens diferentes
+![main](/main.png)
+
+- quando rodar, o projeto irá gerar um arquivo json no diretorio testOllama4j
+- acesse o arquivo, leia a resposta e avalie a precisao do resultado gerado
+- registre a precisao no local adequado
+- copie o conteúdo desse json em um arquivo txt
+- Adicionar o resultado no arquivo res_final.txt, no mesmo diretorio
+- para cada teste, o arquivo será substituído pelo novo resultado. Adicione o novo resultado no arquivo txt na linha abaixo, conforme o exemplo:
+
+![txt_exemplo](/txt_exemplo.png)
+

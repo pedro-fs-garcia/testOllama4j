@@ -1,0 +1,2 @@
+{"precisao":0,"resposta":"or less\n\nPedro uses his tablet, watching videos about cats on Youtube.","imagem":"/home/pedro/Imagens/Capturas de tela/db01.png","tempo":9902,"temperatura":8.0,"modelo":"gemma2:2b","prompt":"describe the image in ten words"}
+
