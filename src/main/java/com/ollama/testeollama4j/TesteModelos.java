@@ -9,6 +9,7 @@ import java.util.List;
 import com.google.gson.Gson;
 
 import io.github.amithkoujalgi.ollama4j.core.OllamaAPI;
+import io.github.amithkoujalgi.ollama4j.core.exceptions.OllamaBaseException;
 import io.github.amithkoujalgi.ollama4j.core.models.OllamaResult;
 import io.github.amithkoujalgi.ollama4j.core.utils.OptionsBuilder;
 
@@ -20,18 +21,23 @@ public class TesteModelos {
 
     public static void main(String[] args) throws Exception {
         // testar os modelos: moondream, moondream:v2, llava, llava-llama3, llava-phi3, minicpm-v
-        String imageModel = "moondream:v2";
-        String imagePrompt = "describe the image in ten words";
+        String imageModel = "llava";
+        String imagePrompt = "transcribe the text in the image";
         String filePath = "/home/pedro/Imagens/Capturas de tela/db01.png";
         float temperatura = 08f;
-        // testFromImage(imageModel, imagePrompt, filePath, temperatura);
+        try {
+        testFromImage(imageModel, imagePrompt, filePath, temperatura);
+            
+        } catch (OllamaBaseException e) {
+            e.printStackTrace();
+        }
 
         //testar os modelos: llama2, llama3.1, gemma2, gemma2:2b, phi3:mini, mistral
         String textModel = "gemma2:2b";
         String textPrompt = "describe the image in ten words";
         String imagePath = "/home/pedro/Imagens/Capturas de tela/db01.png";
         float temperatura2 = 08f;
-        testFromPrompt(textModel, textPrompt, imagePath, temperatura2);
+        // testFromPrompt(textModel, textPrompt, imagePath, temperatura2);
     }
 
     
