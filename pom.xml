@@ -9,7 +9,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <exec.mainClass>com.ollama.testeollama4j.TesteOllama4j</exec.mainClass>
+        <exec.mainClass>com.ollama.testeollama4j.TesteModelos</exec.mainClass>
     </properties>
     
     <dependencies>

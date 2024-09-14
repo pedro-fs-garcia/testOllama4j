@@ -20,18 +20,18 @@ public class TesteModelos {
 
     public static void main(String[] args) throws Exception {
         // testar os modelos: moondream, moondream:v2, llava, llava-llama3, llava-phi3, minicpm-v
-        String imageModel = "moondream:v2";
-        String imagePrompt = "describe the image in ten words";
-        String filePath = "/home/pedro/Imagens/Capturas de tela/db01.png";
+        String imageModel = "moondream";
+        String imagePrompt = "The following document is an id from Brazl. Whats is the name of the person to whom the id belongs?";
+        String filePath = "C:\\Users\\Home\\Pictures\\matricula\\rg.jpg";
         float temperatura = 08f;
-        // testFromImage(imageModel, imagePrompt, filePath, temperatura);
+        testFromImage(imageModel, imagePrompt, filePath, temperatura);
 
         //testar os modelos: llama2, llama3.1, gemma2, gemma2:2b, phi3:mini, mistral
         String textModel = "gemma2:2b";
         String textPrompt = "describe the image in ten words";
         String imagePath = "/home/pedro/Imagens/Capturas de tela/db01.png";
         float temperatura2 = 08f;
-        testFromPrompt(textModel, textPrompt, imagePath, temperatura2);
+        // testFromPrompt(textModel, textPrompt, imagePath, temperatura2);
     }
 
     
@@ -99,7 +99,7 @@ public class TesteModelos {
         results.put("resposta", response);
         results.put("tempo", responseTime);
         results.put("precisao", 0);
-
+        System.out.println(response);
         return results;
     }
 
