@@ -9,10 +9,12 @@ import net.sourceforge.tess4j.TesseractException;
 
 public class TesteTesseract {
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws TesseractException {
         Tesseract tess = new Tesseract();
-        // tess.setDatapath(datapath);
-        tess.setLanguage("eng");
+
+        // for datapath for linux
+        tess.setDatapath("/usr/share/tesseract-ocr/4.00/tessdata");
+        tess.setLanguage("por");
 
         File imgFile = new File("/home/pedro/Imagens/Capturas de tela/db01.png");
 
