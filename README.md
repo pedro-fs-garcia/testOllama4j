@@ -26,10 +26,15 @@ sudo apt maven
 ```
 
 ## Installing Tesseract
+### For Linux:
 ```
 sudo apt install tesseract-ocr
 sudo apt install tesseract-oct-por
 ```
+datapath for Linux: /usr/share/tesseract-ocr/4.00/tessdata
+
+### For Windows:
+
 
 ## clone the repository
 

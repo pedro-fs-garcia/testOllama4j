@@ -15,15 +15,23 @@ public class TesteTesseract {
 
     public static void main(String[] args) throws Exception {
         Tesseract tess = new Tesseract();
-        tess.setDatapath("C:\\Program Files\\Tesseract-OCR\\tessdata");
-        tess.setLanguage("por");
+        
+        // datapath for windows
+        // tess.setDatapath("C:\\Program Files\\Tesseract-OCR\\tessdata");
+        // tess.setLanguage("por");
 
-        File imgFile = new File("C:\\Users\\Home\\Pictures\\matricula\\rg.jpg");
-        File convert = new File("C:\\Users\\Home\\Pictures\\matricula\\rg.png");
-        File convertedFile = convertToPNG(imgFile, convert);
+        // datapath for linux
+        tess.setDatapath("/usr/share/tesseract-ocr/4.00/tessdata");
+        tess.setLanguage("por");
+        
+        File imgFile = new File("/home/pedro/Imagens/2col.png");
+
+        // File imgFile = new File("C:\\Users\\Home\\Pictures\\matricula\\rg.jpg");
+        // File convert = new File("C:\\Users\\Home\\Pictures\\matricula\\rg.png");
+        // File convertedFile = convertToPNG(imgFile, convert);
 
         try{
-            String result = tess.doOCR(convertedFile);
+            String result = tess.doOCR(imgFile);
             System.out.println(result);
         } catch (TesseractException e) {
             System.err.println(e.getMessage());
