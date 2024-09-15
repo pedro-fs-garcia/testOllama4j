@@ -22,7 +22,7 @@ public class TesteModelos {
         // testar os modelos: moondream, moondream:v2, llava, llava-llama3, llava-phi3, minicpm-v
         String imageModel = "moondream";
         String imagePrompt = "The following document is an id from Brazl. Whats is the name of the person to whom the id belongs?";
-        String filePath = "C:\\Users\\Home\\Pictures\\matricula\\rg.jpg";
+        String filePath = "/home/pedro/Imagens/2col.png";
         float temperatura = 08f;
         testFromImage(imageModel, imagePrompt, filePath, temperatura);
 

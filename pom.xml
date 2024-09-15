@@ -9,7 +9,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <exec.mainClass>com.ollama.testeollama4j.TesteModelos</exec.mainClass>
+        <exec.mainClass>com.ollama.testeollama4j.TessOllama</exec.mainClass>
     </properties>
     
     <dependencies>
@@ -37,6 +37,12 @@
             <version>4.1.1</version>
         </dependency>
         
+    
+      <dependency>
+        <groupId>org.scala-tools.testing</groupId>
+        <artifactId>specs_2.10</artifactId>
+        <version>1.6.9</version>
+      </dependency>
     </dependencies>
 
 </project>
