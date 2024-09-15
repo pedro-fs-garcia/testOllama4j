@@ -17,12 +17,14 @@ import net.sourceforge.tess4j.TesseractException;
 public class TessOllama {
     
     public static void main (String[] args) throws Exception{
-        String imagePath = "/home/pedro/Imagens/2col.png";
-        String tesseractAnswer = getTesseractAnswer(imagePath).replace("\n", " ");
+        // SLF4JBridgeHandler.uninstall();
 
-        String prompt = "The following text was extracted from an image. Give me a brief description of what the text is about";
+        String imagePath = "C:\\Users\\Home\\Pictures\\matricula\\rg.png";
+        String tesseractAnswer = getTesseractAnswer(imagePath);
 
-        String answer = getOllamaAnswer(prompt);
+        String prompt = "The following text was extracted from an id document from brazil. Who does the document belong to? What is the date of birth of this person?";
+
+        String answer = getOllamaAnswer(prompt + tesseractAnswer);
         System.out.println(answer);
 
         Gson gson = new Gson();
@@ -48,7 +50,7 @@ public class TessOllama {
         OptionsBuilder options = new OptionsBuilder();
         options.setTemperature(0.8f);
 
-        OllamaResult result = ollamaAPI.generate("gemma2:2b", prompt, false, options.build());
+        OllamaResult result = ollamaAPI.generate("llama2", prompt, false, options.build());
 
         return result.getResponse();
     }
@@ -58,7 +60,10 @@ public class TessOllama {
         Tesseract tess = new Tesseract();
 
         // datapath for linux
-        tess.setDatapath("/usr/share/tesseract-ocr/4.00/tessdata");
+        // tess.setDatapath("/usr/share/tesseract-ocr/4.00/tessdata");
+        // tess.setLanguage("por");
+        // datapath for windows
+        tess.setDatapath("C:\\Program Files\\Tesseract-OCR\\tessdata");
         tess.setLanguage("por");
         
         File imgFile = new File(imagePath);

@@ -31,10 +31,18 @@ sudo apt maven
 sudo apt install tesseract-ocr
 sudo apt install tesseract-oct-por
 ```
-datapath for Linux: /usr/share/tesseract-ocr/4.00/tessdata
+datapath for Linux: "/usr/share/tesseract-ocr/4.00/tessdata"
 
 ### For Windows:
+download and execute .exe file: https://github.com/UB-Mannheim/tesseract/wiki
 
+#### adicionar Tesseract ao PATH:
+ - Pressione `Windows + R`, digite `sysdm.cpl` e pressione Enter
+ - Na aba Avançado, clique no botão Variáveis de Ambiente
+ - Na seção Variáveis do sistema, encontre a variável chamada `Path`, selecione-a e clique em Editar
+ - Clique em `Novo` e adicione o caminho completo para a pasta onde o Tesseract está instalado. O caminho geralmente será algo como: `C:\Program Files\Tesseract-OCR\`
+
+datapath for Windows: "C:\Program Files\Tesseract-OCR"
 
 ## clone the repository
 

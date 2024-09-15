@@ -17,12 +17,12 @@ public class TesteTesseract {
         Tesseract tess = new Tesseract();
         
         // datapath for windows
-        // tess.setDatapath("C:\\Program Files\\Tesseract-OCR\\tessdata");
-        // tess.setLanguage("por");
+        tess.setDatapath("C:\\Program Files\\Tesseract-OCR\\tessdata");
+        tess.setLanguage("por");
 
         // datapath for linux
-        tess.setDatapath("/usr/share/tesseract-ocr/4.00/tessdata");
-        tess.setLanguage("por");
+        // tess.setDatapath("/usr/share/tesseract-ocr/4.00/tessdata");
+        // tess.setLanguage("por");
         
         File imgFile = new File("/home/pedro/Imagens/2col.png");
 
